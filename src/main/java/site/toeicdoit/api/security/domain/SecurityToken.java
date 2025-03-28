@@ -1,9 +1,6 @@
 package site.toeicdoit.api.security.domain;
 import io.jsonwebtoken.*;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,13 +26,7 @@ public class SecurityToken {
             Date ext = new Date();
             ext.setTime(ext.getTime() + expirationTime);
 
-            return Jwts.builder()
-                    .setHeader(headers)
-                    .setClaims(payload)
-                    .setSubject("user")
-                    .setExpiration(ext)
-                    .signWith(SignatureAlgorithm.HS256, key.getBytes())
-                    .compact();
+            return null;
         }catch (SecurityException e){
             log.info("SecurityException JWT");
         }catch (MalformedJwtException e){

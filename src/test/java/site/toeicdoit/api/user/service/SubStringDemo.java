@@ -11,7 +11,6 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Log4j2
 @ExtendWith(MockitoExtension.class)
 public class SubStringDemo {
 
@@ -20,9 +19,9 @@ public class SubStringDemo {
     public void 문자열_분할() throws Exception {
         String str = "a,b,c";
         String data = str + ",d,e,f";
-        log.info(data);
+//        log.info(data);
         String[] arr = data.split(",");
-        Arrays.stream(arr).peek(i -> log.info(i)).toList();
+//        Arrays.stream(arr).peek(i -> log.info(i)).toList();
         assertThat(arr.length).isEqualTo(6);
     }
 
@@ -40,7 +39,7 @@ public class SubStringDemo {
         // a, b, c, d, e, f
         // 주민번호를 통해서 나이와 성별(gender)를 출력하시오. 단, 나이는 만나이로 표기하시오.
         assertThat(getGender(human1)).isEqualTo("M");
-        log.info(getGender(human1));
+//        log.info(getGender(human1));
     }
 
 
@@ -61,7 +60,7 @@ public class SubStringDemo {
         assertThat(month).isEqualTo(4);
         int day = now.getDayOfMonth();
         assertThat(day).isEqualTo(24);
-        log.info(now);
+//        log.info(now);
     }
 
     @Test
@@ -83,7 +82,7 @@ public class SubStringDemo {
                 default -> 00;
             };
         }
-        log.info(Arrays.stream(arr2).peek(i -> log.info(i)).toArray());
+//        log.info(Arrays.stream(arr2).peek(i -> log.info(i)).toArray());
 
     }
 
@@ -157,6 +156,6 @@ public class SubStringDemo {
                 .map(i -> (fullYear - i) / 10000) // 20240424-19970101
                 .findFirst()
                 .get();
-        log.info(s);
+//        log.info(s);
     }
 }
